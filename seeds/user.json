@@ -1,0 +1,16 @@
+[
+    {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+        "username": "root",
+        "password": "pbkdf2_sha256$870000$iKcGMgYTFyN9KBk0PONEwP$s6oL5jc5gWUJLRHzpzcST8tmUX/RqQDIu3oS4/77zzw=",
+        "email": "",
+        "first_name": "Root",
+        "last_name": "User",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true
+      }
+    }
+  ]

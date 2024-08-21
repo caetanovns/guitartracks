@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)5i#jmk%o^6e^qs#xyw#k*-e@j&hy4qr!*pfs*da9!@q#-kuf9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'guitartracks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'guitartracks_test',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'guitartracks_db',
+        'PORT': '5432'
     }
 }
 
