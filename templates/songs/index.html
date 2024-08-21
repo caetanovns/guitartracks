@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% load static %}
+{% block container %}
+    <table>
+        <tr>
+            <th>Artist</th>
+            <th>Song</th>
+            <th>Link</th>
+        </tr>
+        {% for song in songs %}
+            <tr>
+                <td>{{ song.artist}}</td>
+                <td>{{ song.title}}</td>
+                <td><a href="{% url 'view_song' song.id %}">Ir</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock container %}

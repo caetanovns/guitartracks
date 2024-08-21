@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+{% load static %}
+{% block container %}
+    <h1>{{ song.artist }}</h1>
+    <h1>{{ song.title }}</h1>
+    <audio controls>
+        <source src="http://0.0.0.0/{{ song.file_path }}" type="audio/mpeg">
+    </audio>
+{% endblock container %}
