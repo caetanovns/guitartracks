@@ -5,9 +5,9 @@
 
     <div class="space-y-8">
         <div class="sm:flex sm:items-left sm:justify-between">
-            <h2 class="text-xl text-gray-500 dark:text-white sm:text-2xl">Novidades</h2>
+            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Novidades</h2>
         </div>
-        <section class="bg-white dark:bg-gray-900 flex flex-wrap justify-center">
+        <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
             {% for song in random_songs %}
                 {% include 'songs/partials/_card_song.html' %}
             {% endfor %}
@@ -16,7 +16,7 @@
         <div class="sm:flex sm:items-left sm:justify-between">
             <h2 class="text-xl text-gray-500 dark:text-white sm:text-2xl">Artistas</h2>
         </div>
-        <section class="bg-white dark:bg-gray-900 flex flex-wrap justify-center">
+        <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
             {% for artist in artists %}
                 {% include 'songs/partials/_card_artist.html' %}
             {% endfor %}
@@ -24,9 +24,9 @@
         -->
 
         <div class="sm:flex sm:items-left sm:justify-between">
-            <h2 class="text-xl text-gray-500 dark:text-white sm:text-2xl">Músicas</h2>
+            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Músicas</h2>
         </div>
-        <section class="bg-white dark:bg-gray-900 flex flex-wrap justify-center">
+        <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
             {% for song in songs %}
                 {% include 'songs/partials/_card_song.html' %}
             {% endfor %}
