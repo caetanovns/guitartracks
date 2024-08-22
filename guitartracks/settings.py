@@ -77,7 +77,7 @@ DATABASES = {
         'NAME': 'guitartracks_test',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+        'HOST': 'guitartracks_db',
         'PORT': '5432'
     }
 }

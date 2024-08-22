@@ -1,0 +1,12 @@
+<div class="relative m-2 w-48 bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        {% if artist.image_path is None %}
+            <img class="h-64 object-cover" src="https://placehold.co/300x300" alt=""/>
+        {% else %}
+            <img class="h-64 object-cover" src="{{ artist.image_path }}" alt=""/>
+        {% endif %}
+    </a>
+    <div class="absolute inset-0 flex flex-col items-start justify-end p-4 transition-transform duration-300 transform hover:scale-110 peer">
+        <div class="text-white text-sm font-bold">{{ artist.name }}</div>
+    </div>
+</div>
