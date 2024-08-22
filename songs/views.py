@@ -5,7 +5,7 @@ from songs.models import Song
 
 # Create your views here.
 def index(request):
-    songs = Song.objects.all()
+    songs = Song.objects.all()[:10]
     return render(request, 'songs/index.html', {'songs': songs})
 
 

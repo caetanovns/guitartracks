@@ -1,18 +1,24 @@
 {% extends "home.html" %}
 {% load static %}
 {% block container %}
-    <table>
-        <tr>
-            <th>Artist</th>
-            <th>Song</th>
-            <th>Link</th>
-        </tr>
-        {% for song in songs %}
-            <tr>
-                <td>{{ song.artist}}</td>
-                <td>{{ song.title}}</td>
-                <td><a href="{% url 'view_song' song.id %}">Ir</a></td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="space-y-8">
+        <div class="sm:flex sm:items-left sm:justify-between">
+            <h2 class="text-xl text-gray-500 dark:text-white sm:text-2xl">Lançamentos</h2>
+        </div>
+        <section class="bg-white dark:bg-gray-900 flex flex-wrap justify-center">
+            {% for song in songs %}
+                {% include 'songs/partials/_card_song.html' %}
+            {% endfor %}
+        </section>
+
+
+        <div class="sm:flex sm:items-left sm:justify-between">
+            <h2 class="text-xl text-gray-500 dark:text-white sm:text-2xl">Músicas</h2>
+        </div>
+        <section class="bg-white dark:bg-gray-900 flex flex-wrap justify-center">
+            {% for song in songs %}
+                {% include 'songs/partials/_card_song.html' %}
+            {% endfor %}
+        </section>
+    </div>
 {% endblock container %}
