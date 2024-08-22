@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    {%  include 'sidenav.html' %}
+    {% include 'sidenav.html' %}
 
     <div class="p-4 sm:ml-16">
         <div class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
@@ -10,4 +10,6 @@
             {% endblock container %}
         </div>
     </div>
+    {% block footer_content %}
+    {% endblock %}
 {% endblock %}
