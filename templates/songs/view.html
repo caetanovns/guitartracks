@@ -33,32 +33,4 @@
         </section>
     </div>
 
-
 {% endblock container %}
-{% block footer_content %}
-    <nav class="fixed bottom-0 h-16 w-full bg-zinc-900 text-white">
-        <div class="container ml-24 flex justify-start">
-            <div class="flex flex-col justify-around items-start">
-                <h1 class="font-bold">{{ song.artist.name }}</h1>
-                <h1>{{ song.title }}</h1>
-            </div>
-            <media-controller audio class="ml-4 bg-zinc-900" >
-                <audio class="w-full h-full"
-                        slot="media"
-                        type="audio/mpeg"
-                        src="http://0.0.0.0/{{ song.file_path }}"
-                        controls>
-                </audio>
-                <media-control-bar style="background-color: #1F2937 !important; margin-top: 10px;">
-                    <media-seek-backward-button></media-seek-backward-button>
-                    <media-play-button></media-play-button>
-                    <media-seek-forward-button></media-seek-forward-button>
-                    <media-time-display></media-time-display>
-                    <media-time-range></media-time-range>
-                    <media-duration-display></media-duration-display>
-                    <media-mute-button></media-mute-button>
-                </media-control-bar>
-            </media-controller>
-        </div>
-    </nav>
-{% endblock %}

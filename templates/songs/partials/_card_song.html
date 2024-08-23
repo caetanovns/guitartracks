@@ -1,4 +1,4 @@
-<a href="{% url 'view_song' pk=song.id %}">
+<a href="{% url 'index' pk=song.id %}">
     <div class="relative m-2 w-48 bg-zinc-900 dark:bg-gray-800 dark:border-gray-700 transition-transform duration-300 transform hover:scale-110 peer">
         {% if song.artist.image_path == None %}
             <img class="h-64 object-cover" src="https://placehold.co/300x300" alt=""/>
