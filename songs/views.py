@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 from songs.models import Song, Artist
@@ -7,12 +8,18 @@ from datetime import date
 
 def index(request, pk=None):
     song = None
+    search = None
+
     if pk:
         song = get_object_or_404(Song, pk=pk)
 
+    if request.GET.get('song') is not None:
+        search = Song.objects.filter(Q(title__icontains=request.GET.get('song'))).order_by('-artist__popularity')[:20]
+
     data = get_music_home()
     return render(request, 'songs/index.html',
-                  {'random_songs': data[0], 'songs': data[1], 'artists': data[2], 'song': song})
+                  {'random_songs': data[0], 'songs': data[1], 'artists': data[2], 'song': song, 'search': search,
+                   'search_field': request.GET.get('song')})
 
 
 def get_music_home():

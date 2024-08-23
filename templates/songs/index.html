@@ -2,8 +2,18 @@
 {% load static %}
 {% block container %}
     <div class="space-y-8">
+        {% if search %}
+            <div class="sm:flex sm:items-left sm:justify-between">
+                <h2 class="text-xl text-white dark:text-white sm:text-2xl">Resultados</h2>
+            </div>
+            <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
+                {% for song in search %}
+                    {% include 'songs/partials/_card_song_small.html' %}
+                {% endfor %}
+            </section>
+        {% endif %}
         <div class="sm:flex sm:items-left sm:justify-between">
-            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Novidades</h2>
+            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Descubra</h2>
         </div>
         <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
             {% for song in random_songs %}
@@ -12,7 +22,7 @@
         </section>
 
         <div class="sm:flex sm:items-left sm:justify-between">
-            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Artistas</h2>
+            <h2 class="text-xl text-white dark:text-white sm:text-2xl">Mais Populares</h2>
         </div>
         <section class="bg-zinc-900 dark:bg-gray-900 flex flex-wrap justify-center">
             {% for artist in artists %}
@@ -28,8 +38,6 @@
                 {% include 'songs/partials/_card_song.html' %}
             {% endfor %}
         </section>
-
-
     </div>
 {% endblock container %}
 {% block footer_content %}
